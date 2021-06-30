@@ -6,18 +6,24 @@ const button = document.getElementById('button-id');
 const comparisonSpan = document.getElementById('comparison-span-id');
 const attemptsSpan = document.getElementById('attempts-span-id');
 
-let randomNumber = Math.ceil(Math.random()*20);
+
+let randomNumber = Math.ceil(Math.random() * 20);
 let remainingGuesses = 4;
 
 // set event listeners
 button.addEventListener('click', () => {
-    if (guessInput === randomNumber) {
+
+    let guessedNumber = Number(guessInput.value);
+
+    if (guessedNumber === randomNumber) {
         comparisonSpan.textContent = 'You guessed correctly!';
     }
-    else if (guessInput > randomNumber) {
+    else if (guessedNumber > randomNumber) {
         comparisonSpan.textContent = 'Your guess is TOO HIGH — guess lower!';
+        remainingGuesses --;
     } else {
         comparisonSpan.textContent = 'Your guess is TOO LOW — guess higher!';
+        remainingGuesses --;
     }
 });
 
