@@ -18,6 +18,8 @@ guessButton.addEventListener('click', () => {
     if (remainingGuesses === 0) {
         comparisonSpan.textContent = 'Game Over';
         guessButton.disabled = true;
+        attemptsSpan.textContent = `You have ${remainingGuesses} guesses remaining!`;
+        return;
     }
 
     if (guessedNumber > randomNumber) {
@@ -32,6 +34,7 @@ guessButton.addEventListener('click', () => {
 
     } else {
         comparisonSpan.textContent = 'You guessed correctly!';
+        attemptsSpan.textContent = 'No need to guess any further — YOU WON!';
         guessButton.disabled = true;
     }
 });
