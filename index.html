@@ -5,38 +5,63 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link href="https://fonts.googleapis.com/css2?family=Titillium+Web:wght@300&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="./styles/reset.css">
-    <link rel="stylesheet" href="./styles/style.css">
+    <!-- <link href="https://fonts.googleapis.com/css2?family=Titillium+Web:wght@300&display=swap" rel="stylesheet"> -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lovers+Quarrel&family=Molle:ital@1&display=swap" rel="stylesheet">
+    <!-- <link rel="stylesheet" href="./styles/reset.css"> -->
+    <!-- <link rel="stylesheet" href="./styles/style.css"> -->
     <link rel="stylesheet" href="./styles/home.css">
     <title>Document</title>
 </head>
 
 <body>
     <main>
-        <section class="main-section">
-            <h1>
-                Welcome to the Number Guessing Game
-            </h1>
-            <input type="number" id="guess-input-id"/>
-            <button id="guess-button-id">
-                Enter Your Guess Here
-            </button>
-            <span id="comparison-span-id">
-                I will tell you if you need to guess higher or lower ...
-            </span>
-            <span id="attempts-span-id">
-                You have 4 guesses remaining
-            </span>
-            <button id='reset-button-id' disabled>
-                Play again
-            </button>
-        </section>
+        <div id='container-id'>
+            <header>
+                <h1 id='welcome-id'>
+                    Welcome to the Number Guessing Game
+                </h1>
+            </header>
+            <section class="main-section">
+                <article>
+                    <h2 id="h2-id">
+                        Here are the rules:
+                    </h2>
+                    <ul id='rules-id'>
+                        <li>
+                            You have up to four attempts to guess a randomly-generated integer between, and including, 1 and 20;
+                        </li>
+                        <li>
+                            Once you type your number into the input field and press the Submit Button you'll learn whether to guess higher or lower on your next guess;
+                        </li>
+                        <li>
+                            Once you guess correctly, or incorrectly guess four successive times, you'll be given an option to play the game again!
+                        </li>
+                    </ul>
+                </article>
+                <div id='engagement-id'>
+                    <input type="number" id="guess-input-id"/>
+                    <button id="guess-button-id">
+                        Submit Button
+                    </button>
+                    <button id='reset-button-id' disabled>
+                        Play Again
+                    </button>
+                </div>
+                <span id="comparison-span-id">
+                    I will tell you if you need to guess higher or lower ...
+                </span>
+                <span id="attempts-span-id">
+                    You have 4 guesses remaining
+                </span>
+            </section>
+        </div>
     </main>
     <footer>
-        <div class="copy gutter-right">
+        <!-- <div class="copy gutter-right">
             &copy; 2020 Alchemy Code Lab
-        </div>
+        </div> -->
     </footer>
 
     <script type="module" src="./app.js"></script>

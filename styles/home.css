@@ -1,1 +1,54 @@
 /* add home page styles here */
+
+#container-id {
+    border: black;
+    border-style: solid;
+    background-color: honeydew;
+    padding: 15px;
+    width: 425px;
+    margin: auto;
+}
+
+#welcome-id {
+    font-size: 36px;
+    text-align: center;
+    font-family: 'Molle', cursive;
+    color: mediumvioletred;
+}
+
+#h2-id {
+    font-size: 24px;
+    text-align: center;
+    font-family: 'Molle', cursive;
+}
+
+#rules-id {
+    font-size: 24px;
+    text-align: left;
+    font-family: 'Molle', cursive;
+}
+
+#rules-id > li {
+    font-size: 30px;
+    flex-direction: column;
+    justify-content: left;
+    font-family: 'Lovers Quarrel', cursive;
+}
+
+#engagement-id {
+    text-align: center;
+}
+
+#guess-input-id {
+    text-align: center;
+}
+
+#comparison-span-id, #attempts-span-id {
+    font-size: 30px;
+    flex-direction: column;
+    display: flex;
+    text-align: center;
+    justify-content: left;
+    font-family: 'Lovers Quarrel', cursive;
+}
+

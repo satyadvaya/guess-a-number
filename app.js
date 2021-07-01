@@ -3,9 +3,9 @@
 // initialize state
 const guessInput = document.getElementById('guess-input-id');
 const guessButton = document.getElementById('guess-button-id');
+const resetButton = document.getElementById('reset-button-id');
 const comparisonSpan = document.getElementById('comparison-span-id');
 const attemptsSpan = document.getElementById('attempts-span-id');
-const resetButton = document.getElementById('reset-button-id');
 
 let randomNumber = Math.ceil(Math.random() * 20);
 let remainingGuesses = 3;
@@ -14,7 +14,6 @@ let remainingGuesses = 3;
 guessButton.addEventListener('click', () => {
     // get user input
     let guessedNumber = Number(guessInput.value);
-    console.log(randomNumber);
 
     if (remainingGuesses === 0) {
         comparisonSpan.textContent = 'Game Over';
@@ -28,12 +27,10 @@ guessButton.addEventListener('click', () => {
         comparisonSpan.textContent = 'Your guess is TOO HIGH — guess lower!';
         attemptsSpan.textContent = `You have ${remainingGuesses} guesses remaining!`;
         remainingGuesses--;
-
     } else if (guessedNumber < randomNumber) {
         comparisonSpan.textContent = 'Your guess is TOO LOW — guess higher!';
         attemptsSpan.textContent = `You have ${remainingGuesses} guesses remaining!`;        
         remainingGuesses--;
-
     } else {
         comparisonSpan.textContent = 'You guessed correctly!';
         attemptsSpan.textContent = 'No need to guess any further — YOU WON!';
