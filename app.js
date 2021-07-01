@@ -14,11 +14,13 @@ let remainingGuesses = 3;
 guessButton.addEventListener('click', () => {
 
     let guessedNumber = Number(guessInput.value);
+    console.log(randomNumber);
 
     if (remainingGuesses === 0) {
         comparisonSpan.textContent = 'Game Over';
-        guessButton.disabled = true;
         attemptsSpan.textContent = `You have ${remainingGuesses} guesses remaining!`;
+        guessButton.disabled = true;
+        resetButton.disabled = false;
         return;
     }
 
@@ -29,23 +31,27 @@ guessButton.addEventListener('click', () => {
 
     } else if (guessedNumber < randomNumber){
         comparisonSpan.textContent = 'Your guess is TOO LOW — guess higher!';
-        attemptsSpan.textContent = `You have ${remainingGuesses} guesses remaining!`;
+        attemptsSpan.textContent = `You have ${remainingGuesses} guesses remaining!`;        
         remainingGuesses--;
 
     } else {
         comparisonSpan.textContent = 'You guessed correctly!';
         attemptsSpan.textContent = 'No need to guess any further — YOU WON!';
         guessButton.disabled = true;
+        resetButton.disabled = false;
+        return;
     }
 });
 
 resetButton.addEventListener('click', () => {
-    guessButton.disabled = false;
+
     randomNumber = Math.ceil(Math.random() * 20);
     remainingGuesses = 4;
+    guessInput.value = '';
     comparisonSpan.textContent = 'I will tell you if you need to guess higher or lower ...';
     attemptsSpan.textContent = `You have ${remainingGuesses} guesses remaining!`;
-    guessInput.value = '';
+    guessButton.disabled = false;
+    resetButton.disabled = true;
     remainingGuesses--;
 });
 
