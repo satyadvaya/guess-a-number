@@ -12,7 +12,7 @@ let remainingGuesses = 3;
 
 // set event listeners
 guessButton.addEventListener('click', () => {
-
+    // get user input
     let guessedNumber = Number(guessInput.value);
     console.log(randomNumber);
 
@@ -29,7 +29,7 @@ guessButton.addEventListener('click', () => {
         attemptsSpan.textContent = `You have ${remainingGuesses} guesses remaining!`;
         remainingGuesses--;
 
-    } else if (guessedNumber < randomNumber){
+    } else if (guessedNumber < randomNumber) {
         comparisonSpan.textContent = 'Your guess is TOO LOW — guess higher!';
         attemptsSpan.textContent = `You have ${remainingGuesses} guesses remaining!`;        
         remainingGuesses--;
@@ -55,7 +55,7 @@ resetButton.addEventListener('click', () => {
     remainingGuesses--;
 });
 
-  // get user input
+
   // use user input to update state 
   // update DOM to reflect the new state
 
